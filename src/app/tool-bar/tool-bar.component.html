@@ -1,0 +1,69 @@
+<div class="row pl-4 ">
+		<button class="d-inline btn-light button" (click)="changeToolset('pencil')">
+			<i class="icofont-pencil-alt-1 icofont-2x "></i>
+		</button>
+		<button class="d-inline btn-light button" (click)="changeToolset('eraser')">
+			<i class="icofont-eraser icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button" (click)="clearPage()">
+			<i class="icofont-close-line-squared-alt icofont-2x"></i>
+		</button>
+	
+		<button for="imgLoad" class="d-inline btn-light button ml-3">
+			<label class="icofont-image icofont-2x " style="margin:0px;" for="imgLoad"></label>
+			<input type="file" style="display:none" id="imgLoad" (change)='openImage($event.target.files)'>
+		</button>
+
+		<button class="d-inline btn-light button ml-3">
+			<i class="icon-marquee icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button">
+			<i class="icofont-drag icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button">
+			<i class="icofont-ui-cut icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button">
+			<i class="icofont-ui-copy icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button">
+			<i class="icofont-clip-board icofont-2x"></i>
+		</button>
+		
+		<button class="d-inline btn-light button ml-3" (click)="undo()">
+			<i class="icofont-undo icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button" (click)="redo()">
+			<i class="icofont-redo icofont-2x"></i>
+		</button>
+	
+		
+		<button class="d-inline btn-light button ml-3">
+			<i class="icofont-plus-square icofont-2x"></i>
+		</button>
+		<button class="d-inline btn-light button">
+			<i class="icofont-minus-square icofont-2x"></i>
+		</button>
+
+		<span class="d-inline text-light ml-4 align-middle alx-center">Stroke Color</span>
+		<div class="selector d-inline">
+		<select class="form-control custom-select" (change)="setStrokeColor()" [(ngModel)]="strokeColor">
+			<option *ngFor="let color of strokeColors" [value]="color">{{ color }}</option>
+    </select>
+		</div>
+		
+		<span class="d-inline text-light align-middle alx-center">Stroke Thickness</span>
+		<div class="selector d-inline ">
+    <select class="form-control custom-select" (change)="setStrokeThickness()" [(ngModel)]="strokeThickness">
+			<option *ngFor="let size of strokeSizes" [value]=size >{{ size }}</option>
+    </select>
+		</div>
+		
+		<span class="d-inline text-light align-middle alx-center">Background Color</span>
+		<div class="selector d-inline">
+		<select class="form-control custom-select" (change)="setBackgroundColor()" [(ngModel)]="backgroundColor">
+				<option *ngFor="let color of backgroundColors" [value]="color">{{ color }}</option>
+		</select>
+		</div>
+</div>
+

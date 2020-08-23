@@ -1,0 +1,19 @@
+$statusBarHeight: 40px;
+$toolBarHeight: 45px;
+$boardHeight: 92vh;
+
+.app_toolBar {
+	height: $toolBarHeight;
+}
+
+.app_statusBar {
+	background:pink;
+	height: $statusBarHeight;
+}
+
+.app_drawingBoard {
+	background-color:green;
+	top:$toolBarHeight;
+	height: $boardHeight;
+	width:100vw;
+}
